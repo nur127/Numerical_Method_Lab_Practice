@@ -8,19 +8,21 @@ const double tolerence = .0001;
 class Bisection
 {
 private:
+
     double a,b,c,tolerence;
 
     double function(double x){
-        // return pow(x, 3) - 2 * x - 5;     //1. example ---> 2.09 ... result --> 2.094568
+        return pow(x, 3) - 2 * x - 5;     //1. example ---> 2.09 ... result --> 2.094568
         // return pow(x, 3)- 5 * x + 3;      //2. exercises ---> 29 ... result --> 0.657
         // return pow(x, 4) + pow(x, 2)- 80; //3. exercises ---> 30 ... result --> 2.908
         // return sinf(x) + x -1;            //4. exercises ---> 28 ... result --> 0.511
         // return x * exp(x) - 1;            //5. example ---> 2.11 ... result --> 0.5671433
         // return x + log10f(x) -2;          //6. exercises ---> 35 ... result --> 1.756
-        return 3*pow(x,3) + 4 * pow(x,2) + 5*x + 16;
+        // return 3*pow(x,3) + 4 * pow(x,2) + 5*x + 16;
     }
 
     void randomGenarator(){
+        
         srand(time(0));
         do
         {
@@ -31,6 +33,7 @@ private:
         cout << "Initial Guess : a = " <<a <<" b =  " <<b<<nl;
         
     }
+  
 public:
     Bisection(double tolarence) : tolerence(tolarence){
         randomGenarator();
@@ -72,3 +75,12 @@ int main(){
     bisection.solve();
     
 }
+
+
+
+
+
+
+
+
+
