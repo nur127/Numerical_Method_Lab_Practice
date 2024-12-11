@@ -1,52 +1,64 @@
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
+#define nl endl
+#define nur() ios::sync_with_stdio(false);cin.tie(0);
+const int N = 1e5 + 5;
+const double tolerence = .001;
 
 class SecantMethod {
 private:
-    double tolerance;
-    int maxIterations;
+    double a, b, c, tolerence;
 
     double function(double x) {
-        return x * x * x - x*x + 2; 
+        // return pow(x, 3) - 2 * x - 5;     //1. example ---> 2.09 ... result --> 2.094568
+        // return pow(x, 3)- 5 * x + 3;      //2. exercises ---> 29 ... result --> 0.657
+        // return pow(x, 4) + pow(x, 2)- 80; //3. exercises ---> 30 ... result --> 2.908
+        // return sinf(x) + x - 1;           //4. exercises ---> 28 ... result --> 0.511
+        return x * exp(x) - 1;             //5. example ---> 2.11 ... result --> 0.5671433
+        // return x + log10f(x) - 2;         //6. exercises ---> 35 ... result --> 1.756
+    }
+
+    void randomValueGenerator() {
+        srand(time(0));
+        a = static_cast<double>(rand()) / RAND_MAX * 2 - 1;
+        b = a + 0.5; // To ensure a different second guess
+        cout << "Initial Guess a = " << a << ", b = " << b << nl;
     }
 
 public:
-    SecantMethod(double tol = 1e-6, int maxIter = 1000) : tolerance(tol), maxIterations(maxIter) {}
+    SecantMethod(double tolerence) : tolerence(tolerence) {
+        randomValueGenerator();
+    }
 
-    double findRoot(double x0, double x1) {
-        for (int i = 0; i < maxIterations; ++i) {
-            double f_x0 = function(x0);
-            double f_x1 = function(x1);
+    void solve() {
+        int iteration = 1;
 
-            if (fabs(f_x1 - f_x0) < 1e-10) {
-                cerr << "Difference between function values is too small. No convergence." << endl;
-                return x1;
+        while (true) {
+            if (fabs(function(b) - function(a)) < 1e-9) {
+                cout << "Division by zero detected. Stopping computation." << nl;
+                return;
             }
 
-            double x2 = x1 - f_x1 * (x1 - x0) / (f_x1 - f_x0);
-            
-            cout << "Iteration X" << i+1 << " = " << x1 << endl;
+            c = b - function(b) * (b - a) / (function(b) - function(a));
 
-            if (fabs(x2 - x1) < tolerance) {
-                cout << "Converged in " << i + 1 << " iterations." << endl;
-                return x2;
+            cout << "Iteration: " << iteration << "  c: " << c
+                 << "  f(c): " << function(c) << endl;
+
+            if (fabs(function(c)) < tolerence) {
+                break;
             }
 
-            x0 = x1;
-            x1 = x2;
+            a = b;
+            b = c;
+            iteration++;
         }
 
-        cout << "Max iterations reached. Solution may not have converged." << endl;
-        return x1;
+        cout << "The Root Is: " << c << nl;
     }
 };
 
 int main() {
-    SecantMethod solver(1e-6, 100);  
-    double x0 = -2.0;                 
-    double x1 = 3.0;            
-
-    return 0 ;      
-
+    nur();
+    SecantMethod secant(tolerence);
+    secant.solve();
 }
