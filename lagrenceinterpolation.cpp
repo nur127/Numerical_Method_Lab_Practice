@@ -7,8 +7,11 @@ private:
 
 public:
 
-    LagrangeInterpolation(const vector<double>& x_points, const vector<double>& y_points)
-        : x(x_points), y(y_points) {}
+    LagrangeInterpolation( vector<double>& x_points, vector<double>& y_points)
+       {
+        x = x_points;
+        y = y_points;
+       }
 
     double interpolate(double X) {
 

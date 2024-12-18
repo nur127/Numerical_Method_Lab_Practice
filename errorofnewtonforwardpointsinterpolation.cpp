@@ -39,7 +39,7 @@ private:
 
 public:
  
-    NewtonForwardInterpolation(vector<pair<double, double>>& points) {
+    NewtonForwardInterpolation(vector<pair<double,double>>& points) {
         p = points;
         n = p.size();
         h = p[1].first - p[0].first;  

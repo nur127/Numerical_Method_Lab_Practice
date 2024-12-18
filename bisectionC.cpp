@@ -26,11 +26,11 @@ private:
         srand(time(0));
         do
         {
-            a = static_cast<double>(rand())/RAND_MAX * 10 - 10;
-            b= static_cast<double>(rand())/RAND_MAX *10 - 10 ;
+            a = static_cast<double>(rand())/RAND_MAX * 20 - 10;
+            b= static_cast<double>(rand())/RAND_MAX *20 - 10;
         } while (function(a) * function(b) >=0);
 
-        cout << "Initial Guess : a = " <<a <<" b =  " <<b<<nl;
+        cout << "Initial Guess : a = " << a <<" b =  " <<b<<nl;
         
     }
   
@@ -65,9 +65,7 @@ public:
         cout <<nl<<nl<< "The root is: " << fixed << setprecision(4) << c << endl;
     }
     
-
 };
-
 
 int main(){
     nur();

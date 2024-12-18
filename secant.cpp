@@ -47,7 +47,6 @@ public:
             if (fabs(function(c)) < tolerence) {
                 break;
             }
-
             a = b;
             b = c;
             iteration++;
