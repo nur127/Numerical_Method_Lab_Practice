@@ -1,0 +1,1 @@
+{"name":"Local: gaussEleminationMethod","url":"d:\\2 2\\Newmerical Method Lab\\gaussEleminationMethod.cpp","tests":[{"id":1738596302579,"input":"2 3 5 0 \n0 4 2 1\n3 1 1 11","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\2 2\\Newmerical Method Lab\\gaussEleminationMethod.cpp","group":"local","local":true}

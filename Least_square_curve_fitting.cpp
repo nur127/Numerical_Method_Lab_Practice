@@ -25,8 +25,6 @@ void solve(){
     cout <<b<<nl;
     a = ybar -b *xbar ;
     cout<<a<<endl;
-
-
 }
 
 

@@ -1,0 +1,1 @@
+{"name":"Local: NewtonForwardInterpolation","url":"d:\\2 2\\Newmerical Method Lab\\Lab Exam\\NewtonForwardInterpolation.cpp","tests":[{"id":1734505200922,"input":"4 3.5\n1 24\n3 120\n5 336\n7 720","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\2 2\\Newmerical Method Lab\\Lab Exam\\NewtonForwardInterpolation.cpp","group":"local","local":true}

@@ -35,6 +35,7 @@ private:
     }
   
 public:
+
     Bisection(double tolarence) : tolerence(tolarence){
         randomGenarator();
     }

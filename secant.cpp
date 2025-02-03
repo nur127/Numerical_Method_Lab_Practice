@@ -21,7 +21,7 @@ private:
     void randomValueGenerator() {
         srand(time(0));
         a = static_cast<double>(rand()) / RAND_MAX * 2 - 1;
-        b = a + 0.5; // To ensure a different second guess
+        b = a + 0.5; 
         cout << "Initial Guess a = " << a << ", b = " << b << nl;
     }
 
